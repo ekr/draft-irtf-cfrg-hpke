@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-08-05T14:29:05.200982+00:00",
+  "timestamp": "2021-08-23T19:17:08.307585+00:00",
   "repo": "cfrg/draft-irtf-cfrg-hpke",
   "labels": [
     {
@@ -2523,6 +2523,30 @@
           "body": "This discussion over at MLS seems related https://github.com/mlswg/mls-protocol/issues/470.",
           "createdAt": "2021-06-02T21:41:44Z",
           "updatedAt": "2021-06-02T21:41:44Z"
+        }
+      ]
+    },
+    {
+      "number": 238,
+      "id": "MDU6SXNzdWU5NzU2NTcyMTE=",
+      "title": "Authentication Tag Length",
+      "url": "https://github.com/cfrg/draft-irtf-cfrg-hpke/issues/238",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "While working on a Java HPKE implementation I noticed that the spec did not provide guidance for the AEAD authentication tag length.  ",
+      "createdAt": "2021-08-20T14:22:11Z",
+      "updatedAt": "2021-08-23T19:13:58Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mouse07410",
+          "authorAssociation": "NONE",
+          "body": "I concur, and agree with your choice of the Auth tag length. ",
+          "createdAt": "2021-08-23T19:13:58Z",
+          "updatedAt": "2021-08-23T19:13:58Z"
         }
       ]
     }
@@ -17575,20 +17599,126 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NzA0NzU5NTA3",
       "title": "Add em-dash for clarity.",
       "url": "https://github.com/cfrg/draft-irtf-cfrg-hpke/pull/236",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "chris-wood",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "cc @martinthomson ",
       "createdAt": "2021-08-05T14:28:30Z",
-      "updatedAt": "2021-08-05T14:28:30Z",
+      "updatedAt": "2021-08-06T19:47:04Z",
       "baseRepository": "cfrg/draft-irtf-cfrg-hpke",
       "baseRefName": "master",
       "baseRefOid": "57c5c4170f9b742f7d216b47429dd8776cbf04f5",
       "headRepository": "cfrg/draft-irtf-cfrg-hpke",
       "headRefName": "caw/mt-nit",
       "headRefOid": "c2fb9babaf6b97befcf552fbefec6b00360e99b0",
+      "closedAt": "2021-08-05T22:10:37Z",
+      "mergedAt": "2021-08-05T22:10:37Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "0c2e2fa57074040ebf630d062810d507e427509b"
+      },
+      "comments": [
+        {
+          "author": "rozbb",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Teeniest of nits, but this renders poorly. It shows up as `--` in the doc body and bibliography. Also, at least in LaTeX notation, `--` is an en-dash, and `---` is an em-dash. The simple fix is to just insert the `\u2014` character itself, so long as the markdown file is allowed to contain non-ascii characters",
+          "createdAt": "2021-08-06T16:51:53Z",
+          "updatedAt": "2021-08-06T16:51:53Z"
+        },
+        {
+          "author": "bifurcation",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I fail to see how a dash is better than a comma, but whatever.",
+          "createdAt": "2021-08-06T19:47:04Z",
+          "updatedAt": "2021-08-06T19:47:04Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NzIzODI4NTc5",
+          "commit": {
+            "abbreviatedOid": "c2fb9ba"
+          },
+          "author": "martinthomson",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-08-05T21:55:11Z",
+          "updatedAt": "2021-08-05T21:55:11Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 237,
+      "id": "MDExOlB1bGxSZXF1ZXN0NzEyOTkzMTIz",
+      "title": "Add note on Partitioning Oracle attacks",
+      "url": "https://github.com/cfrg/draft-irtf-cfrg-hpke/pull/237",
+      "state": "MERGED",
+      "author": "blipp",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Thanks to Julia, it became clear that the multi-collision algorithm from their PO attacks paper can easily be adapted to use a different nonce per key. Thus, PO attacks stay relevant for HPKE.\r\n\r\nI wish IRTF drafts would support footnotes; then, I would just add it as a footnote. Now I am not sure how to best incorporate this note.",
+      "createdAt": "2021-08-15T19:58:39Z",
+      "updatedAt": "2021-08-23T19:16:13Z",
+      "baseRepository": "cfrg/draft-irtf-cfrg-hpke",
+      "baseRefName": "master",
+      "baseRefOid": "0c2e2fa57074040ebf630d062810d507e427509b",
+      "headRepository": "blipp/draft-irtf-cfrg-hpke",
+      "headRefName": "blipp_po",
+      "headRefOid": "a5444741c9599e272e4b47989d45eed016644791",
+      "closedAt": "2021-08-23T19:16:13Z",
+      "mergedAt": "2021-08-23T19:16:13Z",
+      "mergedBy": "chris-wood",
+      "mergeCommit": {
+        "oid": "b14d403c17661b2b9cce0d0a4e4bd5ae464e9ec8"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NzMwODY4NjEw",
+          "commit": {
+            "abbreviatedOid": "6f0e0e5"
+          },
+          "author": "chris-wood",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-08-16T15:45:27Z",
+          "updatedAt": "2021-08-16T15:45:34Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\nk, the maximum message length in blocks. (Applying the multi-collision algorithm from\r\n{{LGR20}} requires a small adaptation to the algorithm wherein the appropriate nonce\r\nis computed for each candidate key. This modification adds one call to HKDF per key.\r\nThe number of partitioning oracle queries remains unchanged.) As a result, the PSK\r\nmust therefore be chosen with sufficient entropy so that m + log k is prohibitive for\r\nattackers (e.g., 2^128). Future specifications can define new AEAD algorithms which\r\nare key-committing.\r\n```",
+              "createdAt": "2021-08-16T15:45:27Z",
+              "updatedAt": "2021-08-16T15:45:34Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 239,
+      "id": "MDExOlB1bGxSZXF1ZXN0NzE2Nzc5NDUx",
+      "title": "Added Nt authentication tag length",
+      "url": "https://github.com/cfrg/draft-irtf-cfrg-hpke/pull/239",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "FIRST_TIME_CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added Nt as authentication tag length for AEAD ciphers. This should resolve issue #238 ",
+      "createdAt": "2021-08-20T14:25:06Z",
+      "updatedAt": "2021-08-20T14:25:06Z",
+      "baseRepository": "cfrg/draft-irtf-cfrg-hpke",
+      "baseRefName": "master",
+      "baseRefOid": "0c2e2fa57074040ebf630d062810d507e427509b",
+      "headRepository": "jsalowey/draft-irtf-cfrg-hpke",
+      "headRefName": "jsalowey-authtag",
+      "headRefOid": "e749e29d6010e4d9dfc6372b16c8ed6e83531010",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
